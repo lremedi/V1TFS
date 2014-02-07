@@ -39,11 +39,11 @@ cat > "$NUSPEC" <<EOF
 EOF
 
 
-../../.nuget/nuget.exe pack "$NUSPEC"   # output ./Whatever.Nupkg?????
+$WORKSPACE/.nuget/nuget.exe pack "$NUSPEC"   # output ./Whatever.Nupkg?????
 # NuGet SetApiKey <your key here> -source http://chocolatey.org/
 # $MYGET_APIKEY
 for NUPKG in VersionOne.TFS*.nupkg
 do
-    ../../.nuget/nuget.exe setApiKey "$MYGET_API_KEY" -Source "$MY_SOURCE"
-    ../../.nuget/nuget.exe push "$NUPKG" -Source "$MY_SOURCE"
+    $WORKSPACE/.nuget/nuget.exe setApiKey "$MYGET_API_KEY" -Source "$MY_SOURCE"
+    $WORKSPACE/.nuget/nuget.exe push "$NUPKG" -Source "$MY_SOURCE"
 done
