@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set -xe
-. ./$workspace/build.properties
+. ./$WORKSPACE/build.properties
 #api key info
 MYGET_API_KEY="$2"
 #configuration path
