@@ -2,11 +2,10 @@
 
 set -xe
 . ./$workspace/build.properties
-
-#configuration path
-Configuration="$1"
 #api key info
 MYGET_API_KEY="$2"
+#configuration path
+Configuration="$1"
 
 PKGDIR="chocolateyPackage/tools"
 NUSPEC="VersionOne.TFS.PolicyInstaller.nuspec"
