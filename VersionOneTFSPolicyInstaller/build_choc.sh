@@ -7,12 +7,12 @@ MYGET_API_KEY="$2"
 #configuration path
 Configuration="$1"
 
-PKGDIR="chocolateyPackage/tools"
+PKGDIR="chocolateyPackage"
 NUSPEC="VersionOne.TFS.PolicyInstaller.nuspec"
 BUILT_VSIX="bin/$Configuration/VersionOneTFSPolicyInstaller.vsix"
 MY_SOURCE="https://www.myget.org/F/versionone"
 
-cp "$WORKSPACE/VersionOneTFSPolicyInstaller/$BUILT_VSIX" "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR"
+cp "$WORKSPACE/VersionOneTFSPolicyInstaller/$BUILT_VSIX" "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR/tools"
 
 pushd "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR"
 
