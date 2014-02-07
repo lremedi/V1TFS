@@ -1,12 +1,14 @@
 #!/bin/sh
 
 set -xe
+$workspace/build.properties
 
-#obtain global api key value
+#configuration path
+Configuration="$1"
+#api key info
 MYGET_API_KEY="$2"
 
-Configuration="$1"
-PKGDIR="chocolateyPackage"
+PKGDIR="chocolateyPackage/tools"
 NUSPEC="VersionOne.TFS.PolicyInstaller.nuspec"
 BUILT_VSIX="bin/$Configuration/VersionOneTFSPolicyInstaller.vsix"
 MY_SOURCE="https://www.myget.org/F/versionone"
