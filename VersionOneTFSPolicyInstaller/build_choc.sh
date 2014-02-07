@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set -xe
-$workspace/build.properties
+. ./$workspace/build.properties
 
 #configuration path
 Configuration="$1"
