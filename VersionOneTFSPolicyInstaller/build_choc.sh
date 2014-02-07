@@ -22,13 +22,13 @@ cat > "$NUSPEC" <<EOF
     <id>VersionOne.TFS.PolicyInstaller</id>
     <title>VersionOne.TFS.PolicyInstaller</title>
     <version>1.0</version>
-    <authors>VersionOne, Inc.</authors>
-    <owners>VersionOne, Inc.</owners>
+    <authors>$ORGANIZATION_NAME</authors>
+    <owners>$ORGANIZATION_NAME</owners>
     <summary>Ensure that commits checked into TFS via Visual Studio have VersionOne annotation.</summary>
     <description>VersionOne's TFS integration allows you to employ VersionOne in your TFS workflow.</description>
-    <projectUrl>https://github.com/versionone/V1TFS</projectUrl>
+    <projectUrl>$GITHUB_WEB_URL</projectUrl>
     <tags>VersionOne TFS Visual Studio VS2012 VS2013</tags>
-    <licenseUrl>https://github.com/versionone/V1TFS/blob/master/LICENSE.md</licenseUrl>
+    <licenseUrl>$GITHUB_WEB_URL/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
   </metadata>
   <files>
