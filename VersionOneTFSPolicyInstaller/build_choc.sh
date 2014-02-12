@@ -13,10 +13,11 @@ BIN_FOLDER="bin/$Configuration"
 BUILT_VSIX="$BIN_FOLDER/$FILE_BASE_NAME.$FILE_EXT"
 VERSIONED_BUILT_VSIX="$BIN_FOLDER/$FILE_BASE_NAME.$VERSION_NUMBER.$BUILD_NUMBER.$FILE_EXT"
 MY_SOURCE="https://www.myget.org/F/versionone"
+PS1_FILE="Install.ps1"
 
-cp "$WORKSPACE/VersionOneTFSPolicyInstaller/$BUILT_VSIX" "$WORKSPACE/VersionOneTFSPolicyInstaller/$VERSIONED_BUILT_VSIX"
+mv "$WORKSPACE/VersionOneTFSPolicyInstaller/$BUILT_VSIX" "$WORKSPACE/VersionOneTFSPolicyInstaller/$VERSIONED_BUILT_VSIX"
 
-pushd "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR"
+cd "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR"
 
 cat > "$NUSPEC" <<EOF
 <?xml version="1.0"?>
@@ -40,6 +41,11 @@ cat > "$NUSPEC" <<EOF
 </package>
 EOF
 
+cd "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR/tools"
+
+cat > "$PS1_FILE" <<EOF
+  Install-ChocolateyVsixPackage "VersionOne.TFS.Policy" "platform.versionone.com.s3.amazonaws.com/downloads/$VERSIONED_BUILT_VSIX"
+EOF
 
 $WORKSPACE/.nuget/nuget.exe pack "$NUSPEC"   # output ./Whatever.Nupkg?????
 # NuGet SetApiKey <your key here> -source http://chocolatey.org/
