@@ -17,6 +17,12 @@ PS1_FILE="Install.ps1"
 
 mv "$WORKSPACE/VersionOneTFSPolicyInstaller/$BUILT_VSIX" "$WORKSPACE/VersionOneTFSPolicyInstaller/$VERSIONED_BUILT_VSIX"
 
+cd "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR/tools"
+
+cat > "$PS1_FILE" <<EOF
+  Install-ChocolateyVsixPackage "VersionOne.TFS.Policy" "platform.versionone.com.s3.amazonaws.com/downloads/$VERSIONED_BUILT_VSIX"
+EOF
+
 cd "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR"
 
 cat > "$NUSPEC" <<EOF
@@ -39,12 +45,6 @@ cat > "$NUSPEC" <<EOF
     <file src="tools\**" target="tools" />
   </files>
 </package>
-EOF
-
-cd "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR/tools"
-
-cat > "$PS1_FILE" <<EOF
-  Install-ChocolateyVsixPackage "VersionOne.TFS.Policy" "platform.versionone.com.s3.amazonaws.com/downloads/$VERSIONED_BUILT_VSIX"
 EOF
 
 $WORKSPACE/.nuget/nuget.exe pack "$NUSPEC"   # output ./Whatever.Nupkg?????
