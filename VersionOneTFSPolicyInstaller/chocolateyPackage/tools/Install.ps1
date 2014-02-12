@@ -1,4 +1,1 @@
-﻿
-
-Install-ChocolateyVsixPackage "VersionOne.TFS.Policy" "VersionOne.TFS.Policy.1.0.0.vsix"
-
+﻿Install-ChocolateyVsixPackage "VersionOne.TFS.Policy" "platform.versionone.com.s3.amazonaws.com/downloads/VersionOneTFSPolicyInstaller.vsix"

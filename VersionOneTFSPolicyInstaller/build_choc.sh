@@ -3,16 +3,18 @@
 set -xe
 . ./$WORKSPACE/build.properties
 #api key info
-MYGET_API_KEY="$2"
-#configuration path
-Configuration="$1"
+MYGET_API_KEY="$1"
 
 PKGDIR="chocolateyPackage"
 NUSPEC="VersionOne.TFS.PolicyInstaller.nuspec"
-BUILT_VSIX="bin/$Configuration/VersionOneTFSPolicyInstaller.vsix"
+FILE_BASE_NAME="VersionOneTFSPolicyInstaller" 
+FILE_EXT="vsix"
+BIN_FOLDER="bin/$Configuration"
+BUILT_VSIX="$BIN_FOLDER/$FILE_BASE_NAME.$FILE_EXT"
+VERSIONED_BUILT_VSIX="$BIN_FOLDER/$FILE_BASE_NAME.$VERSION_NUMBER.$BUILD_NUMBER.$FILE_EXT"
 MY_SOURCE="https://www.myget.org/F/versionone"
 
-cp "$WORKSPACE/VersionOneTFSPolicyInstaller/$BUILT_VSIX" "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR/tools"
+cp "$WORKSPACE/VersionOneTFSPolicyInstaller/$BUILT_VSIX" "$WORKSPACE/VersionOneTFSPolicyInstaller/$VERSIONED_BUILT_VSIX"
 
 pushd "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR"
 
@@ -22,7 +24,7 @@ cat > "$NUSPEC" <<EOF
   <metadata>
     <id>VersionOne.TFS.PolicyInstaller</id>
     <title>VersionOne.TFS.PolicyInstaller</title>
-    <version>1.0</version>
+    <version>$VERSION_NUMBER.$BUILD_NUMBER</version>
     <authors>$ORGANIZATION_NAME</authors>
     <owners>$ORGANIZATION_NAME</owners>
     <summary>Ensure that commits checked into TFS via Visual Studio have VersionOne annotation.</summary>
