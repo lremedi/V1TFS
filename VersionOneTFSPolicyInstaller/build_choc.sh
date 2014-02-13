@@ -20,7 +20,7 @@ mv "$WORKSPACE/VersionOneTFSPolicyInstaller/$BUILT_VSIX" "$WORKSPACE/VersionOneT
 cd "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR/tools"
 
 cat > "$PS1_FILE" <<EOF
-  Install-ChocolateyVsixPackage "VersionOne.TFS.Policy" "platform.versionone.com.s3.amazonaws.com/downloads/$VERSIONED_BUILT_VSIX"
+  Install-ChocolateyVsixPackage "VersionOne.TFS.Policy" "http://platform.versionone.com.s3.amazonaws.com/downloads/$FILE_BASE_NAME.$VERSION_NUMBER.$BUILD_NUMBER.$FILE_EXT"
 EOF
 
 cd "$WORKSPACE/VersionOneTFSPolicyInstaller/$PKGDIR"
