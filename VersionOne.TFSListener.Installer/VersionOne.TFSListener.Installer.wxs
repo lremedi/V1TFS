@@ -73,6 +73,14 @@
               <File Id="NewtonSoft.Json"
                     Name="NewtonSoft.Json.dll"
                     Source ="$(var.VersionOneTFSServerConfig.TargetDir)"
+                    DiskId="1" Vital="yes" KeyPath="no" />             
+              <File Id="FSharp.Data"
+                    Name="FSharp.Data.dll"
+                    Source ="$(var.VersionOneTFSServerConfig.TargetDir)"
+                    DiskId="1" Vital="yes" KeyPath="no" />
+              <File Id="OAuth2Client"
+                    Name="OAuth2Client.dll"
+                    Source ="$(var.VersionOneTFSServerConfig.TargetDir)"
                     DiskId="1" Vital="yes" KeyPath="no" />
             </Component>
             <Directory Id="WebDir" Name="web">
