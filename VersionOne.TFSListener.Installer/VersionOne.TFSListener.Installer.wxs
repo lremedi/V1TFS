@@ -82,6 +82,10 @@
                     Name="OAuth2Client.dll"
                     Source ="$(var.VersionOneTFSServerConfig.TargetDir)"
                     DiskId="1" Vital="yes" KeyPath="no" />
+              <File Id="VersionOne.Parsers"
+                    Name="VersionOne.Parsers.dll"
+                    Source ="$(var.VersionOneTFSServerConfig.TargetDir)"
+                    DiskId="1" Vital="yes" KeyPath="no" />
             </Component>
             <Directory Id="WebDir" Name="web">
               <Component Id="ListenerWebSite" Guid="82E0F77A-ABBE-4247-A36D-468276FFFAB3">

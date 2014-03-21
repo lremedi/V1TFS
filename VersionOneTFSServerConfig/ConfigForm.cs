@@ -68,7 +68,10 @@ namespace VersionOneTFSServerConfig
             TFSURLTB.Text = config.TfsUrl;
             TFSUsernameTB.Text = config.TfsUserName;
             TFSPasswordTB.Text = config.TfsPassword;
-            ListenerURLTB.Text = new Uri(new ConfigurationProxy().BaseListenerUrl).Append(UriElements.ServiceName).ToString();
+            ListenerURLTB.Text = new Uri(config.BaseListenerUrl).Append(UriElements.ServiceName).ToString();
+
+            // Overall
+            tbBaseUrl.Text = config.BaseListenerUrl;
 
             // Debug Mode
             chkDebugMode.Checked = config.DebugMode;
@@ -82,7 +85,7 @@ namespace VersionOneTFSServerConfig
             if (btnSaveAllSettings.Enabled == false) btnSaveAllSettings.Enabled = true;
 
             var tfsConfig = new TfsServerConfiguration();
-            var proxy = new ConfigurationProxy(null, tbBaseUrl.Text);
+            var proxy = new ConfigurationProxy(null, tfsConfig.BaseListenerUrl);
 
             UpdateStatusText(string.Format("Updating configuration information from {0}.", proxy.ConfigurationUrl), false);
 
@@ -92,7 +95,7 @@ namespace VersionOneTFSServerConfig
             }
             catch (Exception e)
             {
-                UpdateStatusText(string.Format("Could not use the to TFS Listener at url {0}.  Exception:  {1}.", proxy.ConfigurationUrl, e.Message), true);
+                UpdateStatusText(string.Format("Could not use the TFS Listener at url {0}.  Exception:  {1}.", proxy.ConfigurationUrl, e.Message), true);
                 tcSettings.Enabled = false;
                 btnSaveAllSettings.Enabled = false;
             }
