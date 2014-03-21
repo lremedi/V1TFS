@@ -20,7 +20,10 @@
           <File Id="SiteVersionOneSDKAPIClientDLL" Name="VersionOne.SDK.APIClient.dll"/>
           <File Id="SiteVersionOneTFSDataLayer" Name="VersionOne.TFS2010.DataLayer.dll"/>
           <File Id="SiteVersionOneServerConnector" Name="VersionOne.ServerConnector.dll"/>
-          <File Id="SiteVersionOneServiceHostCore" Name="VersionOne.ServiceHost.Core.dll"/>
+          <File Id="FSharp.Data_SiteBin" Name="FSharp.Data.dll"/>
+          <File Id="OAuth2Client_SiteBin" Name="OAuth2Client.dll"/>
+          <File Id="VersionOne.Parsers_SiteBin" Name="VersionOne.Parsers.dll"/>
+          <File Id="VersionOneServiceHostCoreDLL_SiteBin" Name="VersionOne.ServiceHost.Core.dll"/>
           <File Id="log4net" Name="log4net.dll"/>
           <File Id="Elmah" Name="Elmah.dll"/>
           <File Id="IntegrationsCore" Name="Integrations.Core.dll" />

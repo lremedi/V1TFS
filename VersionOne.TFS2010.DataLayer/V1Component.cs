@@ -209,7 +209,7 @@ namespace VersionOne.TFS2010.DataLayer
         {
             public void Log(string message) { }
             public void Log(string message, Exception exception) { }
-            public void Log(LogMessage.SeverityType severity, string message) { throw new Exception(message); }
+            public void Log(LogMessage.SeverityType severity, string message) { }
             public void Log(LogMessage.SeverityType severity, string message, Exception exception) { }
 	        public void LogVersionOneConfiguration(LogMessage.SeverityType severity, XmlElement config) { }
 	        public void LogVersionOneConnectionInformation(LogMessage.SeverityType severity, string metaVersion, string memberOid, string defaultMemberRole) { }

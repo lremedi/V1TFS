@@ -96,33 +96,53 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FSharp.Data">
+    <Reference Include="FParsec, Version=1.0.0.0, Culture=neutral, PublicKeyToken=40ccfc0a09edbb5d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FParsec.1.0.1\lib\net40-client\FParsec.dll</HintPath>
+    </Reference>
+    <Reference Include="FParsecCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=40ccfc0a09edbb5d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FParsec.1.0.1\lib\net40-client\FParsecCS.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Data, Version=1.1.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\FSharp.Data.1.1.10\lib\net40\FSharp.Data.dll</HintPath>
     </Reference>
-    <Reference Include="FSharp.Data.DesignTime">
+    <Reference Include="FSharp.Data.DesignTime, Version=1.1.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\FSharp.Data.1.1.10\lib\net40\FSharp.Data.DesignTime.dll</HintPath>
     </Reference>
-    <Reference Include="log4net">
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="OAuth2Client">
-      <HintPath>..\packages\OAuth2Client.1.6.1.2566\lib\net45\OAuth2Client.dll</HintPath>
+      <HintPath>..\packages\OAuth2Client.1.6.1.2567\lib\net45\OAuth2Client.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
+    <Reference Include="VersionOne.Parsers, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\VersionOne.Parsers.1.1.0.0\lib\net45\VersionOne.Parsers.dll</HintPath>
+    </Reference>
     <Reference Include="VersionOne.SDK.APIClient">
-      <HintPath>..\packages\VersionOne.SDK.APIClient.14.1.1.273\lib\net45\VersionOne.SDK.APIClient.dll</HintPath>
+      <HintPath>..\packages\VersionOne.SDK.APIClient.14.1.1.274\lib\net45\VersionOne.SDK.APIClient.dll</HintPath>
     </Reference>
     <Reference Include="VersionOne.ServerConnector">
-      <HintPath>..\packages\VersionOne.ServerConnector.1.1.0.167\lib\net45\VersionOne.ServerConnector.dll</HintPath>
+      <HintPath>..\packages\VersionOne.ServerConnector.1.1.0.168\lib\net45\VersionOne.ServerConnector.dll</HintPath>
     </Reference>
-    <Reference Include="VersionOne.ServiceHost.Core">
+    <Reference Include="VersionOne.ServiceHost.Core, Version=1.0.201.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\VersionOne.ServiceHost.Core.1.0.201.0\lib\net45\VersionOne.ServiceHost.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -144,11 +164,6 @@
     <Compile Include="VersionOneSettings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +171,9 @@
       <Project>{7147c00a-3070-4619-8597-bd9832160191}</Project>
       <Name>Integrations.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

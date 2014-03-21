@@ -111,7 +111,7 @@
       <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="OAuth2Client">
-      <HintPath>..\packages\OAuth2Client.1.6.1.2566\lib\net45\OAuth2Client.dll</HintPath>
+      <HintPath>..\packages\OAuth2Client.1.6.1.2567\lib\net45\OAuth2Client.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -171,10 +171,10 @@
       <HintPath>..\packages\VersionOne.Parsers.1.1.0.0\lib\net45\VersionOne.Parsers.dll</HintPath>
     </Reference>
     <Reference Include="VersionOne.SDK.APIClient">
-      <HintPath>..\packages\VersionOne.SDK.APIClient.14.1.1.273\lib\net45\VersionOne.SDK.APIClient.dll</HintPath>
+      <HintPath>..\packages\VersionOne.SDK.APIClient.14.1.1.274\lib\net45\VersionOne.SDK.APIClient.dll</HintPath>
     </Reference>
     <Reference Include="VersionOne.ServerConnector">
-      <HintPath>..\packages\VersionOne.ServerConnector.1.1.0.167\lib\net45\VersionOne.ServerConnector.dll</HintPath>
+      <HintPath>..\packages\VersionOne.ServerConnector.1.1.0.168\lib\net45\VersionOne.ServerConnector.dll</HintPath>
     </Reference>
     <Reference Include="VersionOne.ServiceHost.Core">
       <HintPath>..\packages\VersionOne.ServiceHost.Core.1.0.201.0\lib\net45\VersionOne.ServiceHost.Core.dll</HintPath>
