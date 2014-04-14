@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace VersionOneTFSServerConfig
@@ -11,7 +12,15 @@ namespace VersionOneTFSServerConfig
         [STAThread]
         static void Main(string[] args)
         {
-
+            Dictionary<string, string[]> supportedDlls = new Dictionary<string, string[]>();
+            supportedDlls.Add(
+                "Microsoft.TeamFoundation.Client",
+                new string[]{ 
+                                    "Microsoft.TeamFoundation.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", 
+                                    "Microsoft.TeamFoundation.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", 
+                                    "Microsoft.TeamFoundation.Client, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"}
+            );
+            OpenAgile.ReferenceLoader.ResolveDlls(AppDomain.CurrentDomain, supportedDlls);
             foreach (string arg in args)
             {
                 if (arg == "/unsubscribe")
