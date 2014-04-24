@@ -32,7 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <Optimize>false</Optimize>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <WarningLevel>4</WarningLevel>
     <DeployIisAppPath>Default Web Site/VersionOneTFSListener</DeployIisAppPath>
     <Prefer32Bit>false</Prefer32Bit>
@@ -42,7 +42,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <Optimize>true</Optimize>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <WarningLevel>4</WarningLevel>
     <DeployIisAppPath>VersionOneTFSListener</DeployIisAppPath>
     <PublishDatabases>true</PublishDatabases>
