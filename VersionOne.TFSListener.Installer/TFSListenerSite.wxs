@@ -37,6 +37,7 @@
           <File Id="SystemWebWebPages" Name="System.Web.WebPages.dll" />
           <File Id="SystemNetHttp" Name="System.Net.Http.dll" />
           <File Id="SystemWebWebPagesDeployment" Name="System.Web.WebPages.Deployment.dll" />
+          <File Id="SiteOpenAgileReferenceLoader" Name="OpenAgile.ReferenceLoader.dll"/>
         </Component>
       </Directory>
     </DirectoryRef>
