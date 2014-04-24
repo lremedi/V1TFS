@@ -22,7 +22,11 @@ namespace OpenAgile
         private static Assembly Domain_AssemblyResolve(object sender, ResolveEventArgs args)
         {
             Domain.AssemblyResolve -= Domain_AssemblyResolve;
-            Assembly assembly = resolveSupportedAssembly(SupportedDlls[args.Name.Split(',').First()]);
+            Assembly assembly = null;
+            if (SupportedDlls.ContainsKey(args.Name.Split(',').First()))
+            {
+                assembly = resolveSupportedAssembly(SupportedDlls[args.Name.Split(',').First()]);
+            }
             Domain.AssemblyResolve += Domain_AssemblyResolve;
             return assembly;
         }
