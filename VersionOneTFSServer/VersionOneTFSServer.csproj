@@ -170,10 +170,10 @@
       <HintPath>..\packages\VersionOne.Parsers.1.1.0.0\lib\net45\VersionOne.Parsers.dll</HintPath>
     </Reference>
     <Reference Include="VersionOne.SDK.APIClient">
-      <HintPath>..\packages\VersionOne.SDK.APIClient.14.1.1.274\lib\net45\VersionOne.SDK.APIClient.dll</HintPath>
+      <HintPath>..\packages\VersionOne.SDK.APIClient.14.1.1.277\lib\net45\VersionOne.SDK.APIClient.dll</HintPath>
     </Reference>
     <Reference Include="VersionOne.ServerConnector">
-      <HintPath>..\packages\VersionOne.ServerConnector.1.1.0.168\lib\net45\VersionOne.ServerConnector.dll</HintPath>
+      <HintPath>..\packages\VersionOne.ServerConnector.1.1.0.169\lib\net45\VersionOne.ServerConnector.dll</HintPath>
     </Reference>
     <Reference Include="VersionOne.ServiceHost.Core">
       <HintPath>..\packages\VersionOne.ServiceHost.Core.1.0.201.0\lib\net45\VersionOne.ServiceHost.Core.dll</HintPath>
