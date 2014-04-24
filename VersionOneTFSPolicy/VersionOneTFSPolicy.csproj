@@ -105,6 +105,12 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)'=='2012'">
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'=='2010'">
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
       <HintPath>..\packages\FParsec.1.0.1\lib\net40-client\FParsec.dll</HintPath>
@@ -121,11 +127,11 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="OAuth2Client">
       <HintPath>..\packages\OAuth2Client.1.6.1.2567\lib\net45\OAuth2Client.dll</HintPath>
@@ -138,10 +144,10 @@
       <HintPath>..\packages\VersionOne.Parsers.1.1.0.0\lib\net45\VersionOne.Parsers.dll</HintPath>
     </Reference>
     <Reference Include="VersionOne.SDK.APIClient">
-      <HintPath>..\packages\VersionOne.SDK.APIClient.14.1.1.274\lib\net45\VersionOne.SDK.APIClient.dll</HintPath>
+      <HintPath>..\packages\VersionOne.SDK.APIClient.14.1.1.277\lib\net45\VersionOne.SDK.APIClient.dll</HintPath>
     </Reference>
     <Reference Include="VersionOne.ServerConnector">
-      <HintPath>..\packages\VersionOne.ServerConnector.1.1.0.168\lib\net45\VersionOne.ServerConnector.dll</HintPath>
+      <HintPath>..\packages\VersionOne.ServerConnector.1.1.0.169\lib\net45\VersionOne.ServerConnector.dll</HintPath>
     </Reference>
     <Reference Include="VersionOne.ServiceHost.Core">
       <HintPath>..\packages\VersionOne.ServiceHost.Core.1.0.201.0\lib\net45\VersionOne.ServiceHost.Core.dll</HintPath>
@@ -188,10 +194,6 @@
     <ProjectReference Include="..\Integrations.Core\Integrations.Core.csproj">
       <Project>{7147c00a-3070-4619-8597-bd9832160191}</Project>
       <Name>Integrations.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OpenAgile.ReferenceLoader\OpenAgile.ReferenceLoader.csproj">
-      <Project>{a59872b9-3c40-48a7-9e38-4aba5d1a52c7}</Project>
-      <Name>OpenAgile.ReferenceLoader</Name>
     </ProjectReference>
     <ProjectReference Include="..\VersionOne.TFS2010.DataLayer\VersionOne.TFS2010.DataLayer.csproj">
       <Project>{9B0896C0-DC42-44C0-B46D-813F34E55710}</Project>

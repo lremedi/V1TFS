@@ -68,7 +68,14 @@ namespace VersionOneTFSServerConfig
             TFSURLTB.Text = config.TfsUrl;
             TFSUsernameTB.Text = config.TfsUserName;
             TFSPasswordTB.Text = config.TfsPassword;
-            ListenerURLTB.Text = new Uri(config.BaseListenerUrl).Append(UriElements.ServiceName).ToString();
+            try
+            {
+                ListenerURLTB.Text = new Uri(config.BaseListenerUrl).Append(UriElements.ServiceName).ToString();
+            }
+            catch
+            {
+                ListenerURLTB.Text = new Uri(new ConfigurationProxy().BaseListenerUrl).Append(UriElements.ServiceName).ToString();
+            }
 
             // Overall
             tbBaseUrl.Text = config.BaseListenerUrl;
@@ -85,7 +92,15 @@ namespace VersionOneTFSServerConfig
             if (btnSaveAllSettings.Enabled == false) btnSaveAllSettings.Enabled = true;
 
             var tfsConfig = new TfsServerConfiguration();
-            var proxy = new ConfigurationProxy(null, tfsConfig.BaseListenerUrl);
+            ConfigurationProxy proxy;
+            try
+            {
+                proxy = new ConfigurationProxy(null, tfsConfig.BaseListenerUrl);
+            }
+            catch
+            {
+                proxy = new ConfigurationProxy(null, tbBaseUrl.Text);
+            }
 
             UpdateStatusText(string.Format("Updating configuration information from {0}.", proxy.ConfigurationUrl), false);
 
