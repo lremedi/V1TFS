@@ -1,17 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace VersionOneTFSServerConfig
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main(string[] args)
+        [DllImport("kernel32.dll")]
+        static extern bool AttachConsole(int dwProcessId);
+        private const int ATTACH_PARENT_PROCESS = -1;
+        static Program()
         {
+
+            AttachConsole(ATTACH_PARENT_PROCESS);
             Dictionary<string, string[]> supportedDlls = new Dictionary<string, string[]>();
             supportedDlls.Add(
                 "Microsoft.TeamFoundation.Client",
@@ -21,6 +23,13 @@ namespace VersionOneTFSServerConfig
                                     "Microsoft.TeamFoundation.Client, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"}
             );
             OpenAgile.ReferenceLoader.ResolveDlls(AppDomain.CurrentDomain, supportedDlls);
+        }
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main(string[] args)
+        {
             foreach (string arg in args)
             {
                 if (arg == "/unsubscribe")
@@ -48,7 +57,6 @@ namespace VersionOneTFSServerConfig
                     }
                 }
             }
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ConfigForm());
