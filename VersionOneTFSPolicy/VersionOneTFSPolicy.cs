@@ -16,20 +16,6 @@ namespace VersionOne.TFS.Policy {
         public const string VersionOneIdRegex = "[A-Z]{1,2}-[0-9]+";
 
         private static Lazy<V1ComponentContainer> container = new Lazy<V1ComponentContainer>(() => new V1ComponentContainer());
-
-        static VersionOneTFSPolicy() {
-            ConfigureLogger();
-            Dictionary<string, string[]> supportedDlls = new Dictionary<string, string[]>();
-            supportedDlls.Add(
-                "Microsoft.TeamFoundation.Client",
-                new string[]{ 
-                                    "Microsoft.TeamFoundation.VersionControl.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", 
-                                    "Microsoft.TeamFoundation.VersionControl.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", 
-                                    "Microsoft.TeamFoundation.VersionControl.Client, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"}
-            );
-            OpenAgile.ReferenceLoader.ResolveDlls(AppDomain.CurrentDomain, supportedDlls);
-
-        }
         
         public override string Description {
             get { return "Associate checkins with VersionOne work items"; }
